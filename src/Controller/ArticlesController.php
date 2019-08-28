@@ -33,11 +33,8 @@ class ArticlesController extends AppController
      */
     public function view($id = null)
     {
-        $article = $this->Articles->get($id, [
-            'contain' => []
-        ]);
-
-        $this->set('article', $article);
+        $article = $this->Articles->get($id);
+        $this->set(compact('article'));
     }
 
     /**
